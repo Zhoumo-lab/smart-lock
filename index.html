@@ -53,28 +53,20 @@
         }
 
         /* 参数表格 */
-        <!-- 修复1：删除重复的<style>标签 -->
-        <head>
-            <style>
-                /* 删除重复的表格样式定义 */
-                .product-grid {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    gap: 10px;
-                    margin-bottom: 15px;
-                }
-                .specs-table {
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    font-size: 10px;
-                    gap: 4px;
-                }
+        .specs-table {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 改为2列布局 */
+            font-size: 12px;
+            gap: 8px;
+            padding: 10px;
+        }
         .specs-table div {
             padding: 4px;
             border-bottom: 1px solid #f0f0f0;
         }
-        .specs-table div:nth-child(odd) {
+        .specs-table div:nth-child(odd) { /* 奇数项为参数名 */
             font-weight: bold;
+            color: #333;
         }
 
         /* 公司信息 */
@@ -116,10 +108,14 @@
                     <img src="https://placehold.co/200x150?text=A100" style="width:100%;height:100%;object-fit:cover">
                 </div>
                 <div class="specs-table">
-                    <div>型号</div><div>A100</div><div>指纹容量</div><div>100组</div>
-                    <div>电池续航</div><div>12个月</div><div>开锁方式</div><div>指纹/密码/卡</div>
-                    <div>材质</div><div>304不锈钢</div><div>防水等级</div><div>IP54</div>
-                    <div>应急供电</div><div>Type-C</div><div>报警功能</div><div>防撬报警</div>
+                    <div>型号</div><div>A100</div>
+                    <div>指纹容量</div><div>100组</div>
+                    <div>电池续航</div><div>12个月</div>
+                    <div>开锁方式</div><div>指纹/密码/卡</div>
+                    <div>材质</div><div>304不锈钢</div>
+                    <div>防水等级</div><div>IP54</div>
+                    <div>应急供电</div><div>Type-C</div>
+                    <div>报警功能</div><div>防撬报警</div>
                 </div>
             </div>
             <!-- 新增两个产品项 -->
@@ -243,21 +239,13 @@
 
 <!-- 删除文件末尾重复的<style>标签 -->
 <style>
-    /* 参数表格 */
-    .specs-table {
-        display: grid;
-        grid-template-columns: repeat(8, 1fr); /* 改为8列布局 */
-        font-size: 10px;
-        gap: 4px;
-    }
-    /* 调整奇数列加粗规则 */
-    .specs-table div:nth-child(8n+1),
-    .specs-table div:nth-child(8n+3),
-    .specs-table div:nth-child(8n+5),
-    .specs-table div:nth-child(8n+7) {
-        font-weight: bold;
-    }
-</style>
+/* 调整表格布局为4列 */
+.specs-table {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4列布局 */
+    font-size: 10px;
+    gap: 4px;
+}
 
 /* 参数名样式（第1、3列） */
 .specs-table div:nth-child(4n+1),
