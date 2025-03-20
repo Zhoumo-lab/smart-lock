@@ -79,8 +79,36 @@
             margin-top: 20px;
         }
     </style>
+    <style>
+        /* 修改顶部导航栏样式 */
+        .top-bar {
+            background: #000;
+            color: #fff;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* 内容居中 */
+            gap: 20px;
+        }
+        .top-bar img {
+            height: 30px; /* 缩小LOGO尺寸 */
+        }
+        .top-bar h1 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: normal;
+            flex-grow: 1; /* 标题占据剩余空间 */
+            text-align: center; /* 标题居中 */
+        }
+    </style>
 </head>
 <body>
+    <!-- 顶部导航栏 -->
+    <div class="top-bar">
+        <img src="https://placehold.co/100x30?text=LOGO" alt="公司Logo">
+        <h1>某某智能科技有限公司产品一览表</h1>
+    </div>
+
     <!-- 轮播图 -->
     <div class="carousel">
         <div class="carousel-inner">
@@ -127,7 +155,7 @@
         </div>
     </div>
 
-    <!-- 第2-6排（复制以下区块5次） -->
+    <!-- 第2-7排 -->
     <div class="product-section">
         <div class="product-grid">
             <div class="product-item">
@@ -162,13 +190,51 @@
             </div>
         </div>
     </div>
+    <!-- 重复上述区块5次 -->
+    <div class="product-section">...</div>
+    <div class="product-section">...</div>
+    <div class="product-section">...</div>
+    <div class="product-section">...</div>
+    <div class="product-section">...</div>
 
     <!-- 公司信息 -->
     <div class="company-info">
-        <p>某某智能科技有限公司</p>
-        <p>服务热线：400-1234-5678</p>
-        <p>地址：上海市智能科技产业园A栋</p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <p style="margin: 0;">
+                <span>某某智能科技有限公司</span>
+                <span style="margin: 0 1em;">|</span>
+                <span>服务热线：400-1234-5678</span>
+                <span style="margin: 0 1em;">|</span>
+                <span>地址：上海市智能科技产业园A栋</span>
+            </p>
+            <div style="display: flex; gap: 10px;">
+                <a href="https://weixin.qq.com" target="_blank">
+                    <img src="https://placehold.co/40x40?text=微信" alt="微信" style="width: 40px; height: 40px;">
+                </a>
+                <a href="https://your-help-page.com" target="_blank">
+                    <img src="https://placehold.co/40x40?text=帮助" alt="帮助" style="width: 40px; height: 40px;">
+                </a>
+            </div>
+        </div>
     </div>
+
+    <style>
+        /* 修改公司信息样式 */
+        .company-info {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 10px 15px;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+        /* 添加页面底部padding防止内容被遮挡 */
+        body {
+            padding-bottom: 80px;
+        }
+    </style>
 
     <script>
         // 轮播逻辑
