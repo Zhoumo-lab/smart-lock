@@ -53,14 +53,24 @@
         }
 
         /* 参数表格 */
-        <style>
-            /* 删除重复的表格样式定义 */
-            .specs-table {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr); /* ✅ 修正为4列布局 */
-                font-size: 10px;
-                gap: 4px;
-            }
+        <!-- 修复样式重复 -->
+        <head>
+            <style>
+                /* 产品网格布局 */
+                .product-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr); /* 确保3列布局 */
+                    gap: 10px;
+                    margin-bottom: 15px;
+                }
+        
+                /* 参数表格 */
+                .specs-table {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr); /* 4列参数布局 */
+                    font-size: 10px;
+                    gap: 4px;
+                }
         .specs-table div {
             padding: 4px;
             border-bottom: 1px solid #f0f0f0;
@@ -100,7 +110,7 @@
         }
     </style>
 
-    <!-- 第1排产品 -->
+    <!-- 第1排产品（完整示例） -->
     <div class="product-section">
         <div class="product-grid">
             <div class="product-item">
@@ -108,18 +118,22 @@
                     <img src="https://placehold.co/200x150?text=A100" style="width:100%;height:100%;object-fit:cover">
                 </div>
                 <div class="specs-table">
-                    <!-- 原有参数保持不变 -->
+                    <div>型号</div><div>A100</div><div>指纹容量</div><div>100组</div>
+                    <div>电池续航</div><div>12个月</div><div>开锁方式</div><div>指纹/密码/卡</div>
+                    <div>材质</div><div>304不锈钢</div><div>防水等级</div><div>IP54</div>
+                    <div>应急供电</div><div>Type-C</div><div>报警功能</div><div>防撬报警</div>
                 </div>
             </div>
-            <!-- 新增两个完整产品项 -->
+            <!-- 新增两个产品项 -->
             <div class="product-item">
                 <div class="product-img">
                     <img src="https://placehold.co/200x150?text=A200" style="width:100%;height:100%;object-fit:cover">
                 </div>
                 <div class="specs-table">
                     <div>型号</div><div>A200</div><div>指纹容量</div><div>200组</div>
-                    <div>电池续航</div><div>18个月</div><div>开锁方式</div><div>指纹/密码/卡/手机</div>
+                    <div>电池续航</div><div>18个月</div><div>开锁方式</div><div>指纹/手机NFC</div>
                     <div>材质</div><div>锌合金</div><div>防水等级</div><div>IP65</div>
+                    <div>应急供电</div><div>无线充电</div><div>报警功能</div><div>多重报警</div>
                 </div>
             </div>
             <div class="product-item">
@@ -130,42 +144,43 @@
                     <div>型号</div><div>A300</div><div>指纹容量</div><div>300组</div>
                     <div>电池续航</div><div>24个月</div><div>开锁方式</div><div>人脸识别</div>
                     <div>材质</div><div>不锈钢</div><div>防水等级</div><div>IP68</div>
+                    <div>应急供电</div><div>9V电池</div><div>报警功能</div><div>智能警报</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 第4排产品（完整示例） -->
+    <!-- 第2-5排产品（按相同模式补全） -->
     <div class="product-section">
         <div class="product-grid">
-            <div class="product-item">
-                <div class="product-img">
-                    <img src="https://placehold.co/200x150?text=D100" style="width:100%;height:100%;object-fit:cover">
-                </div>
-                <div class="specs-table">
-                    <div>型号</div><div>D100</div><div>指纹容量</div><div>400组</div>
-                    <div>电池续航</div><div>30个月</div><div>开锁方式</div><div>静脉识别</div>
-                    <div>材质</div><div>钛合金</div><div>防水等级</div><div>IP69</div>
-                </div>
-            </div>
-            <!-- 重复结构... -->
+            <!-- B系列产品 -->
+            <div class="product-item">...</div>
+            <div class="product-item">...</div>
+            <div class="product-item">...</div>
         </div>
     </div>
-
-    <!-- 第5排产品 -->
     <div class="product-section">
         <div class="product-grid">
-            <div class="product-item">
-                <div class="product-img">
-                    <img src="https://placehold.co/200x150?text=E100" style="width:100%;height:100%;object-fit:cover">
-                </div>
-                <div class="specs-table">
-                    <div>型号</div><div>E100</div><div>指纹容量</div><div>500组</div>
-                    <div>电池续航</div><div>36个月</div><div>开锁方式</div><div>虹膜识别</div>
-                    <div>材质</div><div>碳纤维</div><div>防水等级</div><div>IP68</div>
-                </div>
-            </div>
-            <!-- 重复结构... -->
+            <!-- C系列产品 -->
+            <div class="product-item">...</div>
+            <div class="product-item">...</div>
+            <div class="product-item">...</div>
+        </div>
+    </div>
+    <div class="product-section">
+        <div class="product-grid">
+            <!-- D系列产品 -->
+            <div class="product-item">...</div>
+            <div class="product-item">...</div>
+            <div class="product-item">...</div>
+        </div>
+    </div>
+    <div class="product-section">
+        <div class="product-grid">
+            <!-- E系列产品 -->
+            <div class="product-item">...</div>
+            <div class="product-item">...</div>
+            <div class="product-item">...</div>
         </div>
     </div>
 
