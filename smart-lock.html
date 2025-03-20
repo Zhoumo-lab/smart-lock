@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* 新增分栏布局 */
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 15px;
+        }
+
+        /* 产品卡片样式 */
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        /* 参数列表优化 */
+        .specs-details li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 13px;
+        }
+
+        /* 高密度参数展示 */
+        .specs-details {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- 新增导航锚点菜单 -->
+    <nav class="product-nav">
+        <a href="#model-A">旗舰款</a>
+        <a href="#model-B">商业款</a>
+        <a href="#model-C">家用款</a>
+    </nav>
+
+    <!-- 分栏式产品展示 -->
+    <!-- 在现有body内添加以下结构 -->
+    <div class="product-container">
+        <!-- 产品卡片模板（重复20次） -->
+        <div class="product-card">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img data-src="real-image.jpg" alt="智能锁型号A" 
+                             loading="lazy" class="responsive-img">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="specs-demo.jpg" alt="技术参数图解" 
+                             loading="lazy" class="responsive-img">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            
+            <div class="specs-item" onclick="toggleSpec(this)">
+                <div class="specs-title">型号A核心参数 ▼</div>
+                <div class="specs-details">
+                    <ul>
+                        <li><span>开锁方式</span><span>指纹/密码/IC卡</span></li>
+                        <li><span>电池续航</span><span>12个月</span></li>
+                        <!-- 更多参数... -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 重复19个product-card区块 -->
+    </div>
+    
+    <style>
+        /* 新增图片占位样式 */
+        .responsive-img {
+            background: #f5f5f5 url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%23ddd"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23999" font-size="14">产品预览</text></svg>');
+            background-size: cover;
+            aspect-ratio: 3/2;
+        }
+    </style>
+    <script>
+        // 增强版图片懒加载
+        const lazyLoader = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    lazyLoader.unobserve(img);
+                }
+            });
+        });
+    
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            lazyLoader.observe(img);
+        });
+    </script>
+</body>
+</html>
