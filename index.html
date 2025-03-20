@@ -1,3 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>智能锁产品展示</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* 轮播图样式 */
+        .carousel {
+            height: 25vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-inner > div {
+            min-width: 100vw;
+            height: 25vh;
+            background: #f0f0f0;
+            border: 1px dashed #ccc;
+            flex-shrink: 0;
+        }
+
+        /* 产品区块样式 */
+        .product-section {
+            padding: 10px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .product-item {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            padding: 8px;
+        }
+        .product-img {
+            height: 20vw;
+            background: #f5f5f5;
+            margin-bottom: 8px;
+        }
+
+        /* 参数表格 */
+        .specs-table {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            font-size: 12px;
+            gap: 8px;
+            padding: 10px;
+        }
+        .specs-table div:nth-child(odd) {
+            font-weight: bold;
+            color: #333;
+        }
+        .specs-table div {
+            padding: 4px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        /* 公司信息 */
+        .company-info {
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 轮播图 -->
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div>Banner 1</div>
+            <div>Banner 2</div>
+            <div>Banner 3</div>
+        </div>
+    </div>
+
+    <!-- 产品区块 -->
+    <!-- 第1排 -->
+    <div class="product-section">
+        <div class="product-grid">
+            <div class="product-item">
+                <div class="product-img">
+                    <img src="https://placehold.co/200x150?text=A100" style="width:100%;height:100%;object-fit:cover">
+                </div>
+                <div class="specs-table">
+                    <div>型号</div><div>A100</div>
+                    <div>指纹容量</div><div>100组</div>
+                    <div>电池续航</div><div>12个月</div>
+                    <div>开锁方式</div><div>指纹/密码/卡</div>
+                    <div>材质</div><div>304不锈钢</div>
+                    <div>防水等级</div><div>IP54</div>
+                    <div>应急供电</div><div>Type-C</div>
+                    <div>报警功能</div><div>防撬报警</div>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-img">
+                    <img src="https://placehold.co/200x150?text=A200" style="width:100%;height:100%;object-fit:cover">
+                </div>
+                <div class="specs-table">
+                    <div>型号</div><div>A200</div>
+                    <div>指纹容量</div><div>200组</div>
+                    <div>电池续航</div><div>18个月</div>
+                    <div>开锁方式</div><div>指纹/手机NFC</div>
+                    <div>材质</div><div>锌合金</div>
+                    <div>防水等级</div><div>IP65</div>
+                    <div>应急供电</div><div>无线充电</div>
+                    <div>报警功能</div><div>多重报警</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第2-6排（复制以下区块5次） -->
+    <div class="product-section">
+        <div class="product-grid">
+            <div class="product-item">
+                <div class="product-img">
+                    <img src="https://placehold.co/200x150?text=B100" style="width:100%;height:100%;object-fit:cover">
+                </div>
+                <div class="specs-table">
+                    <div>型号</div><div>B100</div>
+                    <div>指纹容量</div><div>100组</div>
+                    <div>电池续航</div><div>12个月</div>
+                    <div>开锁方式</div><div>指纹/密码</div>
+                    <div>材质</div><div>铝合金</div>
+                    <div>防水等级</div><div>IP54</div>
+                    <div>应急供电</div><div>9V电池</div>
+                    <div>报警功能</div><div>防撬报警</div>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-img">
+                    <img src="https://placehold.co/200x150?text=B200" style="width:100%;height:100%;object-fit:cover">
+                </div>
+                <div class="specs-table">
+                    <div>型号</div><div>B200</div>
+                    <div>指纹容量</div><div>200组</div>
+                    <div>电池续航</div><div>18个月</div>
+                    <div>开锁方式</div><div>指纹/密码</div>
+                    <div>材质</div><div>锌合金</div>
+                    <div>防水等级</div><div>IP65</div>
+                    <div>应急供电</div><div>9V电池</div>
+                    <div>报警功能</div><div>多重报警</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 公司信息 -->
     <div class="company-info">
         <p>某某智能科技有限公司</p>
         <p>服务热线：400-1234-5678</p>
@@ -14,41 +180,4 @@
         }, 3000);
     </script>
 </body>
-<!-- 文件头部样式保持不变 -->
-    </script>
-</body>
-
-<!-- 删除以下所有重复内容（从原文件287行开始） -->
-<!-- 调整表格布局为4列 -->
-.specs-table {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4列布局 */
-    font-size: 10px;
-    gap: 4px;
-}
-
-/* 参数名样式（第1、3列） */
-.specs-table div:nth-child(4n+1),
-.specs-table div:nth-child(4n+3) {
-    font-weight: bold;
-    color: #333;
-}
-
-/* 参数值样式（第2、4列） */
-.specs-table div:nth-child(4n+2),
-.specs-table div:nth-child(4n+4) {
-    color: #666;
-    font-weight: normal;
-}
-</style>
-<!-- 删除文件末尾所有重复内容（从287行开始） -->
-</script>
-</body>
-</html> <!-- 保留唯一正确的结束标签 -->
-    <div class="company-info">
-        <p>某某智能科技有限公司</p>
-        <p>服务热线：400-1234-5678</p>
-        <p>地址：上海市智能科技产业园A栋</p>
-    </div>
-</body>
-</html> <!-- 文件结束 -->
+</html>
