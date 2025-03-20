@@ -53,66 +53,23 @@
         }
 
         /* 参数表格 */
-        <!-- 修复1：删除重复的<style>标签 -->
-        <head>
-            <style>
-                /* 删除重复的表格样式定义 */
-                .product-grid {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    gap: 10px;
-                    margin-bottom: 15px;
-                }
-                // 修改参数表格样式
-                <style>
-                    /* 参数表格 */
-                    .specs-table {
-                        display: grid;
-                        grid-template-columns: repeat(2, 1fr);
-                        font-size: 10px;
-                        gap: 2px;
-                    }
-                    .specs-table div {
-                        padding: 4px;
-                        border-bottom: 1px solid #f0f0f0;
-                        word-break: break-word; /* 支持自动换行 */
-                    }
-                    .specs-table div:nth-child(odd) {
-                        font-weight: bold;
-                        color: #333;
-                    }
-                </style>
-                
-                // 修改所有参数表格结构示例（以A100为例）
-                <div class="specs-table">
-                    <div>型号</div><div>A100</div>
-                    <div>指纹容量</div><div>100组</div>
-                    <div>电池续航</div><div>12个月</div>
-                    <div>开锁方式</div><div>指纹/密码/卡</div>
-                    <div>材质</div><div>304不锈钢</div>
-                    <div>防水等级</div><div>IP54</div>
-                    <div>应急供电</div><div>Type-C</div>
-                    <div>报警功能</div><div>防撬报警</div>
-                </div>
-                
-                // 删除文件末尾重复的表格样式定义（重要）
-                <!-- 删除以下重复代码 -->
-                <style>
-                /* 调整表格布局为4列 */
-                .specs-table {
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    font-size: 10px;
-                    gap: 4px;
-                }
-                </style>
-        .specs-table div {
-            padding: 4px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .specs-table div:nth-child(odd) {
-            font-weight: bold;
-        }
+        <style>
+            /* 参数表格 */
+            .specs-table {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2px;
+                font-size: 10px;
+            }
+            .specs-table div {
+                padding: 4px;
+                border-bottom: 1px solid #f0f0f0;
+                word-break: break-word;
+            }
+            .specs-table div:nth-child(odd) {
+                font-weight: bold;
+            }
+        </style>
 
         /* 公司信息 */
         .company-info {
@@ -153,10 +110,14 @@
                     <img src="https://placehold.co/200x150?text=A100" style="width:100%;height:100%;object-fit:cover">
                 </div>
                 <div class="specs-table">
-                    <div>型号</div><div>A100</div><div>指纹容量</div><div>100组</div>
-                    <div>电池续航</div><div>12个月</div><div>开锁方式</div><div>指纹/密码/卡</div>
-                    <div>材质</div><div>304不锈钢</div><div>防水等级</div><div>IP54</div>
-                    <div>应急供电</div><div>Type-C</div><div>报警功能</div><div>防撬报警</div>
+                    <div>型号</div><div>A100</div>
+                    <div>指纹容量</div><div>100组</div>
+                    <div>电池续航</div><div>12个月</div>
+                    <div>开锁方式</div><div>指纹/密码/卡</div>
+                    <div>材质</div><div>304不锈钢</div>
+                    <div>防水等级</div><div>IP54</div>
+                    <div>应急供电</div><div>Type-C</div>
+                    <div>报警功能</div><div>防撬报警</div>
                 </div>
             </div>
             <!-- 新增两个产品项 -->
@@ -278,7 +239,7 @@
     </div>
 </div>
 
-<!-- 删除文件末尾重复的<style>标签 -->
+<!-- 删除文件末尾重复样式 -->
 <style>
 /* 调整表格布局为4列 */
 .specs-table {
